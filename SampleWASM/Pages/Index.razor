@@ -1,0 +1,31 @@
+﻿@page "/"
+
+@code {
+	RenderFragment components = b =>
+				{
+					b.OpenComponent<Component1>(1);
+					b.CloseComponent();
+					b.OpenComponent<Component2>(2);
+					b.CloseComponent();
+				};
+}
+
+<div class="card">
+	<div class="card-header">
+		<h2>Code version will render two components</h2>
+	</div>
+	<div class="card-body">
+		@components
+	</div>
+</div>
+<div class="card mt-1">
+	<div class="card-header">
+		<h2>Markup version will not render any components</h2>
+	</div>
+	<div class="card-body">
+		@* This Markup does not render the component - but Intellisense "knows" about it *@
+		<Component1 />
+		<Component2 />
+	</div>
+</div>
+

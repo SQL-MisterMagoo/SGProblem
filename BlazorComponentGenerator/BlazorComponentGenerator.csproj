@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <IsRoslynComponent>true</IsRoslynComponent>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ComponentTemplates\_Component1.razor.cs" />
+    <Compile Remove="ComponentTemplates\_Component2.razor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="ComponentTemplates\_Component1.razor.cs" />
+    <EmbeddedResource Include="ComponentTemplates\_Component2.razor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.10.0-1.final" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.10.0-1.final" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>
